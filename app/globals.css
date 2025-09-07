@@ -5,7 +5,14 @@
 @custom-variant blue (&:is(.blue *));
 @custom-variant sky (&:is(.sky *));
 
-
+@layer utilities{
+  .flex-center{
+    @apply flex justify-center items-center;
+  }
+  .flex-between{
+    @apply flex justify-between items-center;
+  }
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
