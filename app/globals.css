@@ -4,6 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 @custom-variant blue (&:is(.blue *));
 @custom-variant sky (&:is(.sky *));
+@custom-variant backgroundImage (&:is(.bg-hero *));
+@custom-variant orange (&:is(.orange *));
+@custom-variant purple (&:is(.purple *));
+@custom-variant yellow (&:is(.yellow *));
 
 @layer utilities{
   .flex-center{
@@ -130,6 +134,27 @@
 }
 .bg-blue-1{
   background-color: rgba(14, 120, 249, 1);
+}
+.bg-orange-1{
+  background-color: #FF742E;
+}
+.bg-purple-1{
+  background-color: #830EF9;
+}
+.bg-yellow-1{
+  background-color: #F9A90E;
+}
+.bg-hero{
+  background-image: url('/images/hero-background.png');
+}
+.text-sky-1{
+  color: #C9DDFF;
+}
+.text-sky-2{
+  color: #ECF0FF;
+}
+.text-sky-3{
+  color: #F5FCFF;
 }
 @layer base {
   * {

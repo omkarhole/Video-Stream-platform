@@ -22,7 +22,7 @@ const MobileNav = () => {
                 <SheetContent side='left' className='border-none bg-dark-1'>
                     <Link href="/" className='flex items-center gap-1'>
                         <Image src='/icons/logo.svg' alt='Logo' className='max-sm:size-10' width={32} height={32} />
-                        <p className='text-[26px] font-extrabold text-white     '>Zoom</p>
+                        <p className='text-[26px] font-extrabold text-white '>Zoom</p>
                     </Link>
                     <div className='flex h-[calc(100vh-72px)] flex-col justify-between overflow-y-auto '>
                         <SheetClose asChild>
