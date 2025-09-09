@@ -7,7 +7,7 @@ type MeetingProps={
 const Meeting : React.FC<MeetingProps> = async({params}) => {
     const { id } = await params
   return (
-    <div>Meeting: {id}</div>
+    <div>Meeting id : {id}</div>
   )
 }
 
