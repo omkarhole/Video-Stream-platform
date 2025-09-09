@@ -20,9 +20,8 @@ export const tokenProvider = async () => {
     }
 
     const client = new StreamClient(apiKey, apiSecret);
-const validity = 60 * 60;
-const issued = Math.floor(Date.now() / 1000) - 60;
-const token = client.createToken(user.id, validity, issued);
+
+    const token = client.generateUserToken({user_id: user.id});
 
     return token;
 }

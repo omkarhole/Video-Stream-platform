@@ -1,6 +1,6 @@
 'use client'
 
-import { toast, Toaster } from "sonner"
+import { toast } from "sonner"
 import React, { useState } from 'react'
 import HomeCard from '../HomeCard'
 import { useRouter } from 'next/navigation'
