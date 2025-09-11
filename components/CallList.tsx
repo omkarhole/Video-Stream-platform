@@ -12,6 +12,7 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
     const { endedCalls, upcomingCalls, callRecordings, isLoading } = useGetCalls();
     const [recordings, setRecordings] = useState<CallRecording[]>([]);
     const router = useRouter();
+    // Function to get calls based on the type prop
     const getCalls = () => {
         switch (type) {
             case 'ended':
@@ -22,7 +23,7 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
                 return upcomingCalls;
 
             default:
-                return [];
+                return '';
         }
     }
     const getNoCallsMessage = () => {
@@ -34,28 +35,29 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
             case 'upcoming':
                 return "no upcoming calls";
             default:
-                return '';
+                return [];
         }
     }
+    // Fetch recordings for the  meetings when type is recordings 
     useEffect(() => {
         const fetchRecordings = async () => {
             try {
 
-                const callData = await Promise.all(callRecordings.map((meeting) => meeting.queryRecordings() ?? []))
+                const callData = await Promise.all(callRecordings?.map((meeting) => meeting.queryRecordings() ?? []))
                 const recordings = callData.filter(call => call.recordings.length > 0).flatMap(call => call.recordings);
                 setRecordings(recordings);
-
-
-                if (type === 'recordings') {
-                    fetchRecordings();
-                }
             }
             catch (e) {
                 toast.error("To many request made try again later")
             }
         }
+        if (type === 'recordings') {
+        fetchRecordings();
+        }
     }, [type, callRecordings])
     if (isLoading) return <Loader />;
+
+    // Get the calls based on the selected type
     const calls = getCalls();
     const noCallsMessage = getNoCallsMessage();
     return (
@@ -74,7 +76,7 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
                         title={
                             (meeting as Call).state?.custom?.description ||
                             (meeting as CallRecording).filename?.substring(0, 20) ||
-                            'No Description'
+                            'Personal Meeting'
                         }
                         date={
                             (meeting as Call).state?.startsAt?.toLocaleString() ||

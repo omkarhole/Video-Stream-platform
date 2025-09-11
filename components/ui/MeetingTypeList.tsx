@@ -9,6 +9,7 @@ import { useUser } from '@clerk/nextjs'
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk'
 import { Textarea } from "./textarea"
 import ReactDatePicker from "react-datepicker";
+import { Input } from "./input"
 
 const MeetingTypeList = () => {
     const router = useRouter();
@@ -145,6 +146,17 @@ const meetingLink=`${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id
                 buttonText="Start Meeting"
                 handleClick={createMeeting}
             />
+            {/* join meeting through invitation link */}
+             <MeetingModal
+                isOpen={meetingState === 'isJoinMeeting'}
+                onClose={() => setMeetingState(undefined)}
+                title='Type the  link hear'
+                className='text-center'
+                buttonText="Join Meeting"
+                handleClick={()=>router.push(values.link)}
+            >
+             <Input placeholder="Paste link here" className="border-none bg-dark-2 focus-visible:ring-0 focus-visible:ring-offset-0" onChange={(e)=>setValues({...values,link:e.target.value})}/>
+            </MeetingModal>
 
         </section>
     )
