@@ -111,7 +111,7 @@ const meetingLink=`${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id
                                 timeFormat="HH:mm"
                                 timeIntervals={15}
                                 timeCaption="time"
-                                dateFormat={'MMMM d, yyyy h:mm aa'}
+                                dateFormat={'d MMMM , yyyy h:mm aa'}
                                 className="w-full rounded bg-dark-2 p-2 focus:outline-none"
                             />
                         </div>
