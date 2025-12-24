@@ -2,7 +2,7 @@
 
 A modern video calling platform built with Next.js, Stream Video SDK, and Clerk authentication. Create instant meetings, schedule calls, and enjoy high-quality video communication.
 
-## 🌟 Features
+## 🌟 Features  
 
 - **Instant Meetings**: Start video calls immediately
 - **Scheduled Meetings**: Plan and schedule future meetings
