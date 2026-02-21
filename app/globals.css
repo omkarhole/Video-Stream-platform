@@ -9,14 +9,16 @@
 @custom-variant purple (&:is(.purple *));
 @custom-variant yellow (&:is(.yellow *));
 
-@layer utilities{
-  .flex-center{
+@layer utilities {
+  .flex-center {
     @apply flex justify-center items-center;
   }
-  .flex-between{
+
+  .flex-between {
     @apply flex justify-between items-center;
   }
 }
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -126,40 +128,52 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 
 }
-.bg-dark-2{
+
+.bg-dark-2 {
   background-color: rgba(22, 25, 37, 1)
 }
-.bg-dark-1{
+
+.bg-dark-1 {
   background-color: rgba(28, 31, 46, 1);
 }
-.bg-blue-1{
+
+.bg-blue-1 {
   background-color: rgba(14, 120, 249, 1);
 }
-.bg-orange-1{
+
+.bg-orange-1 {
   background-color: #FF742E;
 }
-.bg-purple-1{
+
+.bg-purple-1 {
   background-color: #830EF9;
 }
-.bg-yellow-1{
+
+.bg-yellow-1 {
   background-color: #F9A90E;
 }
-.bg-hero{
+
+.bg-hero {
   background-image: url('/images/hero-background.png');
 }
-.text-sky-1{
+
+.text-sky-1 {
   color: #C9DDFF;
 }
-.text-sky-2{
+
+.text-sky-2 {
   color: #ECF0FF;
 }
-.text-sky-3{
+
+.text-sky-3 {
   color: #F5FCFF;
 }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -169,7 +183,7 @@
 
 /* ==== clerk class override ===== */
 
-.cl-providerIcon__github{
+.cl-providerIcon__github {
   filter: invert(1);
 }
 
@@ -180,6 +194,7 @@
 .cl-logoBox {
   height: 40px;
 }
+
 .cl-dividerLine {
   background: #252a41;
   height: 2px;
@@ -192,9 +207,11 @@
 .cl-internal-wkkub3 {
   color: white;
 }
+
 .cl-userButtonPopoverActionButton {
   color: white;
 }
+
 /* ======== stream css overrides ======== */
 
 
@@ -236,8 +253,23 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
+
 .glassmorphism2 {
   background: rgba(18, 17, 17, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+}
+
+/* Updating video icon */
+.str-video__composite-button--menu {
+  position: relative;
+}
+
+.str-video__menu-toggle-button {
+  position: absolute;
+  height:32px;
+  top: 2px;
+  right: -6px;
+  border-radius: 0 32px 32px 0 !important;
+  padding: 0px 9px 0px 2px !important;
 }
