@@ -39,8 +39,8 @@ const MeetingCard = ({
           </div>
         </div>
       </article>
-      <article className={cn("grid grid-cols-[1fr_auto] gap-3 relative", {})}>
-        <div className="relative flex w-full max-sm:hidden ">
+      <article className={cn("flex justify-center relative", {})}>
+        <div className="relative flex w-full max-sm:hidden">
           {avatarImages.map((img, index) => (
             <Image
               key={index}
@@ -52,15 +52,15 @@ const MeetingCard = ({
               style={{ top: 0, left: index * 28 }}
             />
           ))}
-          <div className="flex-center absolute size-10 rounded-full border-[8px] border-gray-700 bg-gray-700 text-white font-semibold" style={{ top: 0, left: avatarImages.length * 28 }}>
+          <div className="flex-center absolute left-[136px] size-10 rounded-full border-[5px] border-dark-3 bg-dark-4">
             +5
           </div>
         </div>
         {!isPreviousMeeting && (
-          <div className="flex items-center gap-3">
-            <Button onClick={handleClick} className="rounded-md bg-blue-1 px-6 font-bold active:bg-blue-2 active:scale-95">
+          <div className="flex gap-2">
+            <Button onClick={handleClick} className="rounded bg-blue-1 px-6">
               {buttonIcon1 && (
-                <Image src={buttonIcon1} alt="feature" width={16} height={16} />
+                <Image src={buttonIcon1} alt="feature" width={20} height={20} />
               )}
               &nbsp; {buttonText}
             </Button>
@@ -69,7 +69,7 @@ const MeetingCard = ({
                 navigator.clipboard.writeText(link);
                 toast("Link Copied");
               }}
-              className="bg-dark-4 px-4 flex items-center gap-3 whitespace-nowrap active:scale-95"
+              className="bg-dark-4 px-6"
             >
               <Image
                 src="/icons/copy.svg"
@@ -77,7 +77,7 @@ const MeetingCard = ({
                 width={20}
                 height={20}
               />
-              Copy Link
+              &nbsp; Copy Link
             </Button>
           </div>
         )}
