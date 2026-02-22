@@ -108,7 +108,7 @@ const meetingLink=`${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id
                         </div>
                         <div className="flex flex-col gap-2.5">
                             <label className="text-base  leading-[22px] text-normal text-sky-2">Select Date & Time</label>
-                            <ReactDatePicker selected={values.dateTime} onChange={(date) => { setValues({ ...values, dateTime: date! }) }} showTimeSelect
+                            <ReactDatePicker selected={values.dateTime} onChange={(date:any) => { setValues({ ...values, dateTime: date! }) }} showTimeSelect
                                 timeFormat="HH:mm"
                                 timeIntervals={15}
                                 timeCaption="time"
